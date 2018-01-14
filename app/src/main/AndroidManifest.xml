@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListView"></activity>
+        <activity android:name=".ListView" />
+        <activity android:name=".ThrowActivity" />
+        <activity android:name=".VideosActivity"></activity>
     </application>
 
 </manifest>
