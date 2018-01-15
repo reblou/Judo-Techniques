@@ -9,7 +9,7 @@ import android.widget.ListView;
 
 public class ThrowActivity extends AppCompatActivity {
     ListView list;
-    String waza[] = {"ippon seoi nage", "ouchi gari" , "kouchi gari", "tsurikomigoshi"};
+    //String waza[] = {"ippon seoi nage", "ouchi gari" , "kouchi gari", "tsurikomigoshi"};
     public static final String EXTRA_MESSAGE = "com.example.judotechniques.MESSAGE";
 
 
@@ -17,6 +17,10 @@ public class ThrowActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_throw);
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(EXTRA_MESSAGE);
+        //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+        String waza[] = ContentGetter.getThrows(message);
 
         list = (android.widget.ListView) findViewById(R.id.list);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, android.R.id.text2, waza);
