@@ -1,0 +1,2 @@
+- images to res/drawable directory
+- text files to values?

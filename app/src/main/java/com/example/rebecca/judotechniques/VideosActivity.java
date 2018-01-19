@@ -11,6 +11,8 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 public class VideosActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "com.example.judotechniques.MESSAGE";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,16 +25,23 @@ public class VideosActivity extends AppCompatActivity {
 
             strs[i] = "hello_" + i;
         }
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(EXTRA_MESSAGE);
+        Toast.makeText(this, message, Toast.LENGTH_LONG);
+        System.out.println("~~~" + message + "~~~~~");
+        String[] codes = ContentGetter.getCodes(this, message);
+        //String[] cds = new String[22];
+        //System.arraycopy(codes, 0, cds, 0, 22 );
 
-
-        grid.setAdapter(new ThumbAdapter(this, strs));
+        grid.setAdapter(new ThumbAdapter(this, codes));
 
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(VideosActivity.this, "" + position,
-                        Toast.LENGTH_SHORT).show();
-                Watch(v);
+                //String clickedText = parent.getItemAtPosition(position).toString();
+                //Toast.makeText(VideosActivity.this, clickedText,
+                        //Toast.LENGTH_SHORT).show();
+                //Watch(v);
             }
         });
     }

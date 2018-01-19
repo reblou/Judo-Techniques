@@ -1,10 +1,28 @@
 package com.example.rebecca.judotechniques;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.res.AssetManager;
+
+import java.io.BufferedReader;
+import java.io.FileDescriptor;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 /**
  * Created by rebecca on 15/01/18.
  */
 
-public class ContentGetter {
+public class ContentGetter extends Application {
+
+    private static Context mContext;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mContext = this;
+    }
     public static String[] getThrows(String pressed) {
         String ikkyo[] = {
                 "De-ashi-harai",
@@ -70,6 +88,39 @@ public class ContentGetter {
             return gokyo;
         }
 
+    }
+
+    public static String[] getCodes(Context context, String throw_name) {
+        String path = "app/src/main/assets/";
+        //String file = path + throw_name + ".txt";
+        AssetManager a = context.getAssets();
+        ArrayList<String> codes = new ArrayList<>();
+        int codesi = 0;
+
+
+        try {
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(a.open(throw_name + ".txt")));
+
+            String line;
+            String[] splitted;
+
+            while ((line = br.readLine()) != null) {
+                splitted = line.split("\\s+");
+                codes.add(splitted[0]);
+            }
+
+            br.close();
+        } catch (Exception e) {
+            System.out.println("error: " + e.getMessage());
+        }
+        ///home/rebecca/AndroidStudioProjects/JudoTechniques/
+
+        System.out.println(codes.toString());
+
+        String[] cds = new String[codes.size()];
+        return codes.toArray(cds);
+        //return cds;
     }
 
 }

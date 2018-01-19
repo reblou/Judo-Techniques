@@ -22,6 +22,7 @@ my @lines5 = <$file5>;
 #my @in = (\@lines1, \@lines2, \@lines3, \@lines4, \@lines5);
 my @in = (\@lines1);
 
+
 my $outputFile;
 
 foreach (@in) {
@@ -34,7 +35,8 @@ sub getThumbnail {
     my $s = "https://img.youtube.com/vi/";
     my $end = "/hqdefault.jpg";
     my $url = $s . $code . $end;
-    my $options = "script_output/images/" . $code . ".jpg";
+    #my $options = "script_output/images/" . $code . ".jpg";
+    my $options = "app/src/main/res/drawable/" . $code . ".jpg";
 
     unless (-e $options) {
         system("wget", $url, "-O", $options);
@@ -56,7 +58,8 @@ sub parseLines {
 
     foreach (@techniques) {
         my @links = getGoodLinks($n++, @lines);
-        open($outputFile, ">", "script_output/" . $_ . ".txt");
+        #open($outputFile, ">", "script_output/" . $_ . ".txt");
+        open($outputFile, ">", "app/src/main/assets/" . $_ . ".txt");
         foreach my $link (@links) {
             $link = getVideoCode($link);
             if ($link) {

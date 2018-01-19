@@ -37,6 +37,7 @@ public class ThumbAdapter extends BaseAdapter {
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
+        System.out.println("~~pos: "+position);
         View grid;
         LayoutInflater inflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -45,7 +46,7 @@ public class ThumbAdapter extends BaseAdapter {
             grid = new View(mContext);
             grid = inflater.inflate(R.layout.grid_single, null);
             TextView textView = (TextView) grid.findViewById(R.id.grid_text);
-            ImageView imageView = (ImageView)grid.findViewById(R.id.grid_image);
+            ImageView imageView = (ImageView) grid.findViewById(R.id.grid_image);
             textView.setText(titles[position]);
             imageView.setImageResource(imageId[position]);
         } else {
@@ -66,7 +67,6 @@ public class ThumbAdapter extends BaseAdapter {
             R.drawable.sample_6, R.drawable.sample_7,
             R.drawable.sample_0, R.drawable.sample_1,
             R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
+            R.drawable.sample_4
     };
 }
