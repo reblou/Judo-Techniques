@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by rebecca on 14/01/18.
@@ -49,10 +50,20 @@ public class ThumbAdapter extends BaseAdapter {
             ImageView imageView = (ImageView) grid.findViewById(R.id.grid_image);
             textView.setText(titles[position]);
             imageView.setImageResource(imageId[position]);
+            /*
+            grid.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String text = (String) textView.getText();
+
+                    Toast.makeText(mContext, text,
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+            */
         } else {
             grid = (View) convertView;
         }
-
         return grid;
     }
 

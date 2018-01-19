@@ -19,8 +19,8 @@ my @lines2 = <$file2>;
 my @lines3 = <$file3>;
 my @lines4 = <$file4>;
 my @lines5 = <$file5>;
-#my @in = (\@lines1, \@lines2, \@lines3, \@lines4, \@lines5);
-my @in = (\@lines1);
+my @in = (\@lines1, \@lines2, \@lines3, \@lines4, \@lines5);
+#my @in = (\@lines1);
 
 
 my $outputFile;

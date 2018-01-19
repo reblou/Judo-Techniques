@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class VideosActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.judotechniques.MESSAGE";
-
+    String codes[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,23 +27,28 @@ public class VideosActivity extends AppCompatActivity {
         }
         Intent intent = getIntent();
         String message = intent.getStringExtra(EXTRA_MESSAGE);
+        codes = ContentGetter.getCodes(this, message);
+
         Toast.makeText(this, message, Toast.LENGTH_LONG);
         System.out.println("~~~" + message + "~~~~~");
-        String[] codes = ContentGetter.getCodes(this, message);
         //String[] cds = new String[22];
         //System.arraycopy(codes, 0, cds, 0, 22 );
         int[] thumbs = ContentGetter.getThumbIds(this, codes);
         grid.setAdapter(new ThumbAdapter(this, codes, thumbs));
 
+
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                //String clickedText = parent.getItemAtPosition(position).toString();
-                //Toast.makeText(VideosActivity.this, clickedText,
-                        //Toast.LENGTH_SHORT).show();
-                //Watch(v);
+                String code = codes[position];
+                /*
+                Toast.makeText(VideosActivity.this, clickedText,
+                        Toast.LENGTH_SHORT).show();
+                        */
+                watchYoutubeVideo(code);
             }
         });
+
     }
 
     public void Watch(View view) {
