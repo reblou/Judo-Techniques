@@ -32,8 +32,8 @@ public class VideosActivity extends AppCompatActivity {
         String[] codes = ContentGetter.getCodes(this, message);
         //String[] cds = new String[22];
         //System.arraycopy(codes, 0, cds, 0, 22 );
-
-        grid.setAdapter(new ThumbAdapter(this, codes));
+        int[] thumbs = ContentGetter.getThumbIds(this, codes);
+        grid.setAdapter(new ThumbAdapter(this, codes, thumbs));
 
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,

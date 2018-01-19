@@ -123,4 +123,34 @@ public class ContentGetter extends Application {
         //return cds;
     }
 
+    public static int[] getThumbIds(Context context, String[] codes) {
+        // int drawableResourceId = this.getResources().getIdentifier("nameOfDrawable", "drawable", this.getPackageName());
+        int[] ids = new int[codes.length];
+        int idN = 0;
+        String fn;
+        for (int i = 0; i < codes.length; i++) {
+            fn = encode(codes[i]);
+            ids[idN++] = context.getResources().getIdentifier(fn, "drawable", context.getPackageName());
+        }
+        return ids;
+    }
+
+    public static String encode(String code) {
+        String enc = "i";
+        char c;
+        for (int i = 0; i < code.length(); i++) {
+            c = code.charAt(i);
+            if (Character.isUpperCase(c)) {
+                enc += "_" + Character.toLowerCase(c);
+            } else if (c == '_') {
+                enc += "__";
+            } else if (c == '-') {
+                enc += "_0";
+            } else {
+                enc += c;
+            }
+        }
+        return enc;
+
+    }
 }

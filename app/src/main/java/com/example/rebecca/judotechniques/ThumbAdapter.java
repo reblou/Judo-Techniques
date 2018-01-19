@@ -17,14 +17,14 @@ public class ThumbAdapter extends BaseAdapter {
     private final int[] imageId;
     private Context mContext;
 
-    public ThumbAdapter(Context c, String[] titles) {
+    public ThumbAdapter(Context c, String[] titles, int[] thumbs) {
         mContext = c;
         this.titles = titles;
-        this.imageId = mThumbIds;
+        this.imageId = thumbs;
     }
 
     public int getCount() {
-        return mThumbIds.length;
+        return imageId.length;
     }
 
     public Object getItem(int position) {
@@ -56,7 +56,7 @@ public class ThumbAdapter extends BaseAdapter {
         return grid;
     }
 
-    // references to our images
+    /* references to our images
     private int[] mThumbIds = {
             R.drawable.sample_2, R.drawable.sample_3,
             R.drawable.sample_4, R.drawable.sample_5,
@@ -69,4 +69,5 @@ public class ThumbAdapter extends BaseAdapter {
             R.drawable.sample_2, R.drawable.sample_3,
             R.drawable.sample_4
     };
+    */
 }

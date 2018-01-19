@@ -29,14 +29,39 @@ foreach (@in) {
     parseLines(@{$_});
 }
 
+sub encode {
+    my $code = shift;
+
+    my @chars = split //, $code;
+    my @enc;
+
+    push @enc, "i";
+    foreach (@chars) {
+
+        if ($_ =~ /[A-Z]/) {
+            push @enc, "_" . lc($_);
+        } elsif ($_ =~ /_/) {
+            push @enc, "_" . $_;
+        } elsif ($_ =~ /-/) {
+            push @enc, "_0";
+        } else {
+            push @enc, $_;
+        }
+    }
+
+    my $str = join //, @enc;
+    return $str;
+}
+
 sub getThumbnail {
     my $code = shift;
     $code =~ s/\?t=[\s\S]+//g;
     my $s = "https://img.youtube.com/vi/";
     my $end = "/hqdefault.jpg";
     my $url = $s . $code . $end;
+    my $filename = encode($code);
     #my $options = "script_output/images/" . $code . ".jpg";
-    my $options = "app/src/main/res/drawable/" . $code . ".jpg";
+    my $options = "app/src/main/res/drawable/" . $filename . ".jpg";
 
     unless (-e $options) {
         system("wget", $url, "-O", $options);
