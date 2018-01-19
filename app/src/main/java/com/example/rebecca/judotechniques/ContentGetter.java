@@ -136,6 +136,9 @@ public class ContentGetter extends Application {
     }
 
     public static String encode(String code) {
+
+        code = code.replaceAll("\\?t=[\\s\\S]+", "");
+        System.out.println("~code: " + code);
         String enc = "i";
         char c;
         for (int i = 0; i < code.length(); i++) {

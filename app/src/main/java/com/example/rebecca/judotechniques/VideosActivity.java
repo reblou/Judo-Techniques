@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import java.util.Arrays;
+
 public class VideosActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.judotechniques.MESSAGE";
     String codes[];
@@ -31,9 +33,16 @@ public class VideosActivity extends AppCompatActivity {
 
         Toast.makeText(this, message, Toast.LENGTH_LONG);
         System.out.println("~~~" + message + "~~~~~");
+        System.out.println("~~~" + Arrays.toString(codes) + "~~~~~");
+        System.out.println("~~~" + codes.length + "~~~~~");
+
         //String[] cds = new String[22];
         //System.arraycopy(codes, 0, cds, 0, 22 );
         int[] thumbs = ContentGetter.getThumbIds(this, codes);
+
+        System.out.println("~~~" + Arrays.toString(thumbs) + "~~~~");
+
+        System.out.println("~~~" + thumbs.length + "~~~~");
         grid.setAdapter(new ThumbAdapter(this, codes, thumbs));
 
 

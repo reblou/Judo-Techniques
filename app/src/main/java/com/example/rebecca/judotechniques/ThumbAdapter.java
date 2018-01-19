@@ -25,11 +25,11 @@ public class ThumbAdapter extends BaseAdapter {
     }
 
     public int getCount() {
-        return imageId.length;
+        return titles.length;
     }
 
     public Object getItem(int position) {
-        return null;
+        return titles[position];
     }
 
     public long getItemId(int position) {
@@ -46,10 +46,7 @@ public class ThumbAdapter extends BaseAdapter {
 
             grid = new View(mContext);
             grid = inflater.inflate(R.layout.grid_single, null);
-            TextView textView = (TextView) grid.findViewById(R.id.grid_text);
-            ImageView imageView = (ImageView) grid.findViewById(R.id.grid_image);
-            textView.setText(titles[position]);
-            imageView.setImageResource(imageId[position]);
+
             /*
             grid.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -64,6 +61,10 @@ public class ThumbAdapter extends BaseAdapter {
         } else {
             grid = (View) convertView;
         }
+        TextView textView = (TextView) grid.findViewById(R.id.grid_text);
+        ImageView imageView = (ImageView) grid.findViewById(R.id.grid_image);
+        textView.setText(titles[position]);
+        imageView.setImageResource(imageId[position]);
         return grid;
     }
 
