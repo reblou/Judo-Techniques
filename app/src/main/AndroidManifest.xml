@@ -19,7 +19,8 @@
 
         <activity android:name=".ThrowActivity"
         android:label="Throws"
-        android:parentActivityName=".MainActivity">
+        android:parentActivityName=".MainActivity"
+        android:launchMode="singleTop">
 
         <!-- The meta-data tag is required if you support API level 15 and lower -->
         <meta-data

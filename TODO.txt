@@ -1,5 +1,4 @@
 - youtube-dl --get-title to get video title for display in gridView
-- fix duplicate videos issue;
-- fix scrolling issue;
 - fix back navigation issue
 - add throws outside the gokyo
+- remove dead links

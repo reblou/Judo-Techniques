@@ -55,7 +55,7 @@ sub encode {
 
 sub getThumbnail {
     my $code = shift;
-    (my $ts = $code) =~ s/\?t=[\s\S]+//g;
+    $code =~ s/\?t=[\s\S]+//g;
     my $s = "https://img.youtube.com/vi/";
     my $end = "/hqdefault.jpg";
     my $url = $s . $code . $end;
