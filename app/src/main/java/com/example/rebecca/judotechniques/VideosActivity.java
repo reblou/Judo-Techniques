@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import java.util.Arrays;
 
 public class VideosActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.judotechniques.MESSAGE";
@@ -21,50 +20,25 @@ public class VideosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
         GridView grid = (GridView) findViewById(R.id.gridview);
-        String[] strs = new String[22];
 
-        for (int i = 0; i < strs.length; i++) {
-
-            strs[i] = "hello_" + i;
-        }
         Intent intent = getIntent();
         String message = intent.getStringExtra(EXTRA_MESSAGE);
         codes = ContentGetter.getCodes(this, message);
 
         Toast.makeText(this, message, Toast.LENGTH_LONG);
-        System.out.println("~~~" + message + "~~~~~");
-        System.out.println("~~~" + Arrays.toString(codes) + "~~~~~");
-        System.out.println("~~~" + codes.length + "~~~~~");
 
-        //String[] cds = new String[22];
-        //System.arraycopy(codes, 0, cds, 0, 22 );
         int[] thumbs = ContentGetter.getThumbIds(this, codes);
 
-        System.out.println("~~~" + Arrays.toString(thumbs) + "~~~~");
-
-        System.out.println("~~~" + thumbs.length + "~~~~");
         grid.setAdapter(new ThumbAdapter(this, codes, thumbs));
-
 
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 String code = codes[position];
-                /*
-                Toast.makeText(VideosActivity.this, clickedText,
-                        Toast.LENGTH_SHORT).show();
-                        */
                 watchYoutubeVideo(code);
             }
         });
 
-    }
-
-    public void Watch(View view) {
-        watchYoutubeVideo("GyHA17-59yk");
-        //  http://www.youtube.com/watch?v=GyHA17-59yk
-        // Mercuryu Judo
-        // https://img.youtube.com/vi/<insert-youtube-video-id-here>/hqdefault.jpg
     }
 
     public void watchYoutubeVideo(String id) {

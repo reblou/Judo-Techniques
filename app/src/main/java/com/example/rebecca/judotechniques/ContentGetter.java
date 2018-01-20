@@ -75,7 +75,6 @@ public class ContentGetter extends Application {
                 "Yoko-gake"
         };
 
-        //     {"Dai Ikkyo", "Dai Nikkyo", "Dai Sankyo", "Dai Yonkyo", "Dai Gokyo"};
         if (pressed.equals("Dai Ikkyo")) {
             return ikkyo;
         } else if (pressed.equals("Dai Nikkyo")) {
@@ -92,11 +91,8 @@ public class ContentGetter extends Application {
 
     public static String[] getCodes(Context context, String throw_name) {
         String path = "app/src/main/assets/";
-        //String file = path + throw_name + ".txt";
         AssetManager a = context.getAssets();
         ArrayList<String> codes = new ArrayList<>();
-        int codesi = 0;
-
 
         try {
 
@@ -114,13 +110,11 @@ public class ContentGetter extends Application {
         } catch (Exception e) {
             System.out.println("error: " + e.getMessage());
         }
-        ///home/rebecca/AndroidStudioProjects/JudoTechniques/
 
         System.out.println(codes.toString());
 
         String[] cds = new String[codes.size()];
         return codes.toArray(cds);
-        //return cds;
     }
 
     public static int[] getThumbIds(Context context, String[] codes) {
@@ -138,7 +132,6 @@ public class ContentGetter extends Application {
     public static String encode(String code) {
 
         code = code.replaceAll("\\?t=[\\s\\S]+", "");
-        System.out.println("~code: " + code);
         String enc = "i";
         char c;
         for (int i = 0; i < code.length(); i++) {

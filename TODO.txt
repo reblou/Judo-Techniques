@@ -1,4 +1,4 @@
 - youtube-dl --get-title to get video title for display in gridView
-- fix back navigation issue
-- add throws outside the gokyo
 - remove dead links
+- throws listed with spaces rather than -
+- add throws outside the gokyo
