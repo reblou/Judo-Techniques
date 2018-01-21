@@ -3,6 +3,12 @@
 use strict;
 use warnings;
 
+use Data::Dumper;
+use JSON;
+
+binmode STDOUT, ":utf8";
+use utf8;
+
 #get urls for videos of each technique
 #video code
 #thumbnail
@@ -19,14 +25,50 @@ my @lines2 = <$file2>;
 my @lines3 = <$file3>;
 my @lines4 = <$file4>;
 my @lines5 = <$file5>;
-my @in = (\@lines1, \@lines2, \@lines3, \@lines4, \@lines5);
-#my @in = (\@lines1);
+#my @in = (\@lines1, \@lines2, \@lines3, \@lines4, \@lines5);
+my @in = (\@lines1);
 
 
 my $outputFile;
 
 foreach (@in) {
     parseLines(@{$_});
+}
+
+sub getInfo {
+    my $code = shift;
+    print "code: " . $code . "\n";
+    my @info;
+    # 'fulltitle'
+    # 'uploader'
+    # 'duration'
+
+    my $url = "https://youtube.com/watch?v=" . $code;
+    my $command = "youtube-dl " . $url . " --dump-json --skip-download > out.txt";
+    system($command);
+
+    if ($? == -1) {
+        return -1;
+    }
+
+    my $json;
+    {
+      local $/; #Enable 'slurp' mode
+      open my $fh, "<", "out.txt";
+      $json = <$fh>;
+      close $fh;
+    }
+    my $data = decode_json($json);
+    #print "data: " . Dumper($data);
+    print "title: " . $data->{'fulltitle'} . "\n";
+    print "uploader: " . $data->{'uploader'} . "\n";
+    print "duration: " . $data->{'duration'} . "\n";
+    push @info, $data->{'fulltitle'};
+    push @info, $data->{'uploader'};
+    push @info, $data->{'duration'};
+    system("rm out.txt");
+
+    return @info;
 }
 
 sub encode {
@@ -49,7 +91,7 @@ sub encode {
         }
     }
 
-    my $str = join //, @enc;
+    my $str = join "", @enc;
     return $str;
 }
 
@@ -80,6 +122,7 @@ sub parseLines {
     my $index = 10;
     my $link = "";
     my $n = 1;
+    my @info;
 
     foreach (@techniques) {
         my @links = getGoodLinks($n++, @lines);
@@ -89,7 +132,12 @@ sub parseLines {
             $link = getVideoCode($link);
             if ($link) {
                 getThumbnail($link);
-                print $outputFile $link . "\n";
+                @info = getInfo($link);
+                print $outputFile "'" . $link . "'";
+                foreach (@info) {
+                    print $outputFile " '" . $_ . "'";
+                }
+                print $outputFile "\n";
             }
         }
     }

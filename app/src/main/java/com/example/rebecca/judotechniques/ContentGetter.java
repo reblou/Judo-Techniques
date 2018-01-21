@@ -102,8 +102,9 @@ public class ContentGetter extends Application {
             String[] splitted;
 
             while ((line = br.readLine()) != null) {
-                splitted = line.split("\\s+");
-                codes.add(splitted[0]);
+                splitted = line.split("'\\s+'");
+                System.out.println("~~splitted0: " + splitted[0]);
+                codes.add(splitted[0].replaceAll("\'", ""));
             }
 
             br.close();

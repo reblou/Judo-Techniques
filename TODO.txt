@@ -2,3 +2,4 @@
 - remove dead links
 - throws listed with spaces rather than -
 - add throws outside the gokyo
+- thumbnails relative to screen size
