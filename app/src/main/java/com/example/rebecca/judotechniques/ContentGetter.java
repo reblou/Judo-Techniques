@@ -103,7 +103,6 @@ public class ContentGetter extends Application {
 
             while ((line = br.readLine()) != null) {
                 splitted = line.split("'\\s+'");
-                System.out.println("~~splitted0: " + splitted[0]);
                 codes.add(splitted[0].replaceAll("\'", ""));
             }
 

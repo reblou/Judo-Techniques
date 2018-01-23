@@ -1,7 +1,7 @@
-kiLCfJk2mEA
-cwZsCZiR7Q0
-2n8miJpxfcI
-iuZeYkKRel0
-rEse2qtAgCo
-vG-9Ii2mFfE
-AMZGe3W1sl4
+'kiLCfJk2mEA' 'Judo - Uki-otoshi' 'Mercuryu Judo' '175'
+'cwZsCZiR7Q0' 'uki otoshi' 'anapasport' '12'
+'2n8miJpxfcI' '05   Uki Otoshi' 'PAT settore Judo Fijlkam' '585'
+'iuZeYkKRel0' 'Uki-Otoshi (Tokio Hirano-Lehrgang 1984 in Papendaal, Holland)' 'Judo von Frank Thiele' '76'
+'rEse2qtAgCo' 'Kuki-Nage (Tokio Hirano-Lehrgang 1984 in Papendaal, Holland)' 'Judo von Frank Thiele' '63'
+'vG-9Ii2mFfE' 'Kombination O-Soto-Gari → Uki-Otoshi (Tokio Hirano-Lehrgang 1984 in Papendaal, Holland)' 'Judo von Frank Thiele' '28'
+'AMZGe3W1sl4' 'The Trainwreck Revealed' 'Timothy Spriggs' '120'

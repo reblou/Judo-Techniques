@@ -1,5 +1,5 @@
-2meKovMhZb8
-lV_HUZ9m1fQ
-H6dL_ru9FjM
-r2I3Q5DzqPc
-O7PGiupF53o
+'2meKovMhZb8' 'Judo - Tsuri-goshi' 'Mercuryu Judo' '138'
+'lV_HUZ9m1fQ' 'Tsuri goshi' 'anapasport' '13'
+'H6dL_ru9FjM' 'Tsuri Goshi' 'HontoJudo' '65'
+'r2I3Q5DzqPc' 'Ilias Iliadis - O-tsuri-goshi, Ko-tsuri-goshi, O-goshi' 'Ivo Stornaiuolo' '300'
+'O7PGiupF53o' 'Tsuri-Goshi (Tokio-Hirano-Lehrgang 1986 in Rodgau, Nieder-Roden)' 'Judo von Frank Thiele' '40'

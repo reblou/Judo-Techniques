@@ -25,9 +25,19 @@ my @lines2 = <$file2>;
 my @lines3 = <$file3>;
 my @lines4 = <$file4>;
 my @lines5 = <$file5>;
-#my @in = (\@lines1, \@lines2, \@lines3, \@lines4, \@lines5);
-my @in = (\@lines1);
+my @in = (\@lines1, \@lines2, \@lines3, \@lines4, \@lines5);
+#my @in = (\@lines1);
 
+my $skip;
+my $updatedLinks = 0;
+
+if ($ARGV[0]) {
+    $skip = $ARGV[0];
+} else {
+    $skip = 0;
+}
+
+print "skip: $skip\n";
 
 my $outputFile;
 
@@ -127,8 +137,18 @@ sub parseLines {
     foreach (@techniques) {
         my @links = getGoodLinks($n++, @lines);
         #open($outputFile, ">", "script_output/" . $_ . ".txt");
-        open($outputFile, ">", "app/src/main/assets/" . $_ . ".txt");
+        if ($skip <= 0) {
+            open($outputFile, ">", "app/src/main/assets/" . $_ . ".txt");
+        }
         foreach my $link (@links) {
+            if ($skip-- > 0) {
+                $updatedLinks++;
+                if ($skip == 0) {
+                    open($outputFile, ">>", "app/src/main/assets/" . $_ . ".txt");
+                }
+                next;
+            }
+
             $link = getVideoCode($link);
             if ($link) {
                 getThumbnail($link);
@@ -137,7 +157,9 @@ sub parseLines {
                 foreach (@info) {
                     print $outputFile " '" . $_ . "'";
                 }
+                $updatedLinks++;
                 print $outputFile "\n";
+                print "--" . $updatedLinks . "--\n";
             }
         }
     }

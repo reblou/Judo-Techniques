@@ -1,7 +1,7 @@
-hKkDMj8Vgxc
-TQQwmVh0sPI
-WbK9COV-GpY
-JTEJpigD1_E
-SQ7jLH5fSfY
-6rG3Gq_CF2c
-sidM_C12Qtk
+'hKkDMj8Vgxc' 'Judo - Harai-goshi' 'Mercuryu Judo' '197'
+'TQQwmVh0sPI' '古賀 稔彦 TOSHIHIKO KOGA - HARAI GOSHI' 'JUDO VIDEO LIBRARY' '50'
+'WbK9COV-GpY' 'harai goshi' 'Kuldin Evgeny' '84'
+'JTEJpigD1_E' 'JUDO Harai goshi par F. Dambach' 'STAGEJUDO' '203'
+'SQ7jLH5fSfY' 'Harai Goshi' 'HontoJudo' '62'
+'6rG3Gq_CF2c' 'Harai-Goshi (Nage-No-Kata) (Tokio Hirano-Lehrgang 1984 in Papendaal, Holland)' 'Judo von Frank Thiele' '28'
+'sidM_C12Qtk' 'Harai-Goshi (Tokio-Hirano-Lehrgang 1986 in Rodgau, Nieder-Roden)' 'Judo von Frank Thiele' '62'

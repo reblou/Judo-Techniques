@@ -1,9 +1,8 @@
-pnTq5wFPEFM
-L0NrvHGcWE0
-OTmWLNE3_Ns
-SoVFOQ8dsxw?t=16s
-dDabH7zVV2Q
-02KruGRsfvA
-unb7brtANiI
-ZeQjOESNVFE
-Gh4PQ0RDMHA
+'pnTq5wFPEFM' 'Judo - Ashi-guruma' 'Mercuryu Judo' '105'
+'OTmWLNE3_Ns' 'ashi guruma' 'anapasport' '14'
+'SoVFOQ8dsxw?t=16s' 'Frederic Dambach Es Dojo 1' 'Roberto Espinosa' '223'
+'dDabH7zVV2Q' 'Ashi guruma, Jean Luc Barré, 6ème dan Kodokan de Tôkyô, Japon' 'Jean-Luc Barr�' '181'
+'02KruGRsfvA' 'Circle Ashi Guruma n�1' 'Sport-Management- System' '294'
+'unb7brtANiI' 'Circle Ashi Guruma n�2' 'Sport-Management- System' '178'
+'ZeQjOESNVFE' 'Ashi-Guruma (Tokio Hirano-Lehrgang 1984 in Papendaal, Holland)' 'Judo von Frank Thiele' '26'
+'Gh4PQ0RDMHA' 'Ashi-Guruma (Tokio-Hirano-Lehrgang 1986 in Rodgau, Nieder-Roden)' 'Judo von Frank Thiele' '87'
