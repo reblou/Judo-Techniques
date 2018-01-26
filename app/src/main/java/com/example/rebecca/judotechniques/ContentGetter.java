@@ -15,6 +15,7 @@ import java.util.ArrayList;
  */
 
 public class ContentGetter extends Application {
+    public static final String PATH = "app/src/main/assets/";
 
     private static Context mContext;
 
@@ -90,7 +91,6 @@ public class ContentGetter extends Application {
     }
 
     public static String[] getCodes(Context context, String throw_name) {
-        String path = "app/src/main/assets/";
         AssetManager a = context.getAssets();
         ArrayList<String> codes = new ArrayList<>();
 
@@ -148,5 +148,59 @@ public class ContentGetter extends Application {
         }
         return enc;
 
+    }
+
+    public static String[] getTitles(Context context, String throw_name) {
+        AssetManager a = context.getAssets();
+        ArrayList<String> titles = new ArrayList<>();
+
+        try {
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(a.open(throw_name + ".txt")));
+
+            String line;
+            String[] splitted;
+
+            while ((line = br.readLine()) != null) {
+                splitted = line.split("'\\s+'");
+                titles.add(splitted[1].replaceAll("\'", ""));
+            }
+
+            br.close();
+        } catch (Exception e) {
+            System.out.println("error: " + e.getMessage());
+        }
+
+        System.out.println(titles.toString());
+
+        String[] cds = new String[titles.size()];
+        return titles.toArray(cds);
+    }
+
+    public static String[] getUploaders(Context context, String throw_name) {
+        AssetManager a = context.getAssets();
+        ArrayList<String> ups = new ArrayList<>();
+
+        try {
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(a.open(throw_name + ".txt")));
+
+            String line;
+            String[] splitted;
+
+            while ((line = br.readLine()) != null) {
+                splitted = line.split("'\\s+'");
+                ups.add(splitted[2].replaceAll("\'", ""));
+            }
+
+            br.close();
+        } catch (Exception e) {
+            System.out.println("error: " + e.getMessage());
+        }
+
+        System.out.println(ups.toString());
+
+        String[] cds = new String[ups.size()];
+        return ups.toArray(cds);
     }
 }

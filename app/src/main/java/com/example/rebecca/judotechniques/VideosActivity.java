@@ -24,12 +24,11 @@ public class VideosActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra(EXTRA_MESSAGE);
         codes = ContentGetter.getCodes(this, message);
-
-        Toast.makeText(this, message, Toast.LENGTH_LONG);
+        String[] titles = ContentGetter.getTitles(this, message);
 
         int[] thumbs = ContentGetter.getThumbIds(this, codes);
 
-        grid.setAdapter(new ThumbAdapter(this, codes, thumbs));
+        grid.setAdapter(new ThumbAdapter(this, titles, thumbs));
 
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,

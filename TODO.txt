@@ -1,5 +1,4 @@
 - youtube-dl --get-title to get video title for display in gridView
-- remove dead links
 - throws listed with spaces rather than -
 - add throws outside the gokyo
 - thumbnails relative to screen size
