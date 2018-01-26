@@ -15,12 +15,14 @@ import android.widget.TextView;
 public class ThumbAdapter extends BaseAdapter {
     private final String[] titles;
     private final int[] imageId;
+    private final String[] uploaders;
     private Context mContext;
 
-    public ThumbAdapter(Context c, String[] titles, int[] thumbs) {
+    public ThumbAdapter(Context c, String[] titles, String[] uploaders, int[] thumbs) {
         mContext = c;
         this.titles = titles;
         this.imageId = thumbs;
+        this.uploaders = uploaders;
     }
 
     public int getCount() {
@@ -50,6 +52,8 @@ public class ThumbAdapter extends BaseAdapter {
 
         TextView textView = (TextView) grid.findViewById(R.id.grid_text);
         ImageView imageView = (ImageView) grid.findViewById(R.id.grid_image);
+        TextView upl = grid.findViewById(R.id.grid_uploader);
+        upl.setText(uploaders[position]);
         textView.setText(titles[position]);
         imageView.setImageResource(imageId[position]);
         return grid;

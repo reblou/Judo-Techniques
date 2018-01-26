@@ -25,10 +25,11 @@ public class VideosActivity extends AppCompatActivity {
         String message = intent.getStringExtra(EXTRA_MESSAGE);
         codes = ContentGetter.getCodes(this, message);
         String[] titles = ContentGetter.getTitles(this, message);
+        String[] uploaders = ContentGetter.getUploaders(this, message);
 
         int[] thumbs = ContentGetter.getThumbIds(this, codes);
 
-        grid.setAdapter(new ThumbAdapter(this, titles, thumbs));
+        grid.setAdapter(new ThumbAdapter(this, titles, uploaders, thumbs));
 
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
