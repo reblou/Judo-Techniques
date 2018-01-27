@@ -29,7 +29,7 @@ my @lines5 = <$file5>;
 my @lines6 = <$file6>;
 #my @in = (\@lines1, \@lines2, \@lines3, \@lines4, \@lines5);
 #my @in = (\@lines3);
-my @in = (\@lines6);
+#my @in = (\@lines6);
 
 my $skip;
 my $updatedLinks = 0;

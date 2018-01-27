@@ -4,4 +4,4 @@
 - documentation
 - aesthetic improvements
 - about page
-- bad examples
+- bad example videos
