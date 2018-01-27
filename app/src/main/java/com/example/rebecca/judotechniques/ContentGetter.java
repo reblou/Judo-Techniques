@@ -5,13 +5,12 @@ import android.content.Context;
 import android.content.res.AssetManager;
 
 import java.io.BufferedReader;
-import java.io.FileDescriptor;
-import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
- * Created by rebecca on 15/01/18.
+ * A bunch of static methods used to get information stored about the videos/ throws to be displayed
+ * in the app.
  */
 
 public class ContentGetter extends Application {
@@ -24,6 +23,10 @@ public class ContentGetter extends Application {
         super.onCreate();
         mContext = this;
     }
+
+    /*
+        Gets an array of throw names for each category on the main menu
+     */
     public static String[] getThrows(String pressed) {
         String ikkyo[] = {
                 "De ashi harai",
@@ -99,8 +102,10 @@ public class ContentGetter extends Application {
 
     }
 
+    /*
+        Gets the resource id of each video thumbnail for an array of video codes
+     */
     public static int[] getThumbIds(Context context, String[] codes) {
-        // int drawableResourceId = this.getResources().getIdentifier("nameOfDrawable", "drawable", this.getPackageName());
         int[] ids = new int[codes.length];
         int idN = 0;
         String fn;
@@ -111,8 +116,10 @@ public class ContentGetter extends Application {
         return ids;
     }
 
+    /*
+        Takes a video code and turns it into the format of the image file in res/drawable
+     */
     public static String encode(String code) {
-
         code = code.replaceAll("\\?t=[\\s\\S]+", "");
         String enc = "i";
         char c;
@@ -132,6 +139,13 @@ public class ContentGetter extends Application {
 
     }
 
+    /*
+        Gets data from throw_name.txt files in asset folders
+        index 0 = youtube video code
+        index 1 = video title
+        index 2 = video uploader
+        index 3 = video duration
+     */
     public static String[] getThrowData(Context context, String throw_name, int index) {
         AssetManager a = context.getAssets();
         ArrayList<String> data = new ArrayList<>();

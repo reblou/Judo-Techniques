@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by rebecca on 14/01/18.
+ * Makes a View for each video of a throw.
  */
 
 public class ThumbAdapter extends BaseAdapter {
@@ -37,7 +37,6 @@ public class ThumbAdapter extends BaseAdapter {
         return 0;
     }
 
-    // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
         View grid;
         LayoutInflater inflater = (LayoutInflater) mContext

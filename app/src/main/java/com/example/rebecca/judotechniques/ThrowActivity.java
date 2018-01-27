@@ -36,15 +36,10 @@ public class ThrowActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-
-                // ListView Clicked item index
-                int itemPosition = position;
-
-                // ListView Clicked item value
-                String itemValue = (String) list.getItemAtPosition(position);
-
-
                 Intent intent = new Intent(ThrowActivity.this, VideosActivity.class);
+
+                int itemPosition = position;
+                String itemValue = (String) list.getItemAtPosition(position);
                 intent.putExtra(EXTRA_MESSAGE, itemValue);
 
                 startActivity(intent);
