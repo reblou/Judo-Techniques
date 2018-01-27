@@ -23,9 +23,10 @@ public class VideosActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(EXTRA_MESSAGE);
-        codes = ContentGetter.getCodes(this, message);
-        String[] titles = ContentGetter.getTitles(this, message);
-        String[] uploaders = ContentGetter.getUploaders(this, message);
+        String trw = message.replaceAll(" ", "-");
+        codes = ContentGetter.getCodes(this, trw);
+        String[] titles = ContentGetter.getTitles(this, trw);
+        String[] uploaders = ContentGetter.getUploaders(this, trw);
 
         int[] thumbs = ContentGetter.getThumbIds(this, codes);
 

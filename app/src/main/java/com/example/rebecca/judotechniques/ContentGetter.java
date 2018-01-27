@@ -26,54 +26,61 @@ public class ContentGetter extends Application {
     }
     public static String[] getThrows(String pressed) {
         String ikkyo[] = {
-                "De-ashi-harai",
-                "Hiza-guruma",
-                "Sasae-tsurikomi-ashi",
-                "Uki-goshi",
-                "Osoto-gari",
-                "O-goshi",
-                "Ouchi-gari",
-                "Seoi-nage"
+                "De ashi harai",
+                "Hiza guruma",
+                "Sasae tsurikomi ashi",
+                "Uki goshi",
+                "Osoto gari",
+                "O goshi",
+                "Ouchi gari",
+                "Seoi nage"
         };
         String nikkyo[] = {
-                "Kosoto-gari",
-                "Kouchi-gari",
-                "Koshi-guruma",
-                "Tsurikomi-goshi",
-                "Okuri-ashi-harai",
-                "Tai-Otoshi",
-                "Harai-goshi",
-                "Uchi-mata"
+                "Kosoto gari",
+                "Kouchi gari",
+                "Koshi guruma",
+                "Tsurikomi goshi",
+                "Okuri ashi harai",
+                "Tai Otoshi",
+                "Harai goshi",
+                "Uchi mata"
         };
         String sankyo[] = {
-                "Kosoto-gake",
-                "Tsuri-goshi",
-                "Yoko-Otoshi",
-                "Ashi-guruma",
-                "Hane-goshi",
-                "Harai-tsurikomi-ashi",
-                "Tomoe-nage",
-                "Kata-guruma"
+                "Kosoto gake",
+                "Tsuri goshi",
+                "Yoko Otoshi",
+                "Ashi guruma",
+                "Hane goshi",
+                "Harai tsurikomi ashi",
+                "Tomoe nage",
+                "Kata guruma"
         };
         String yonkyo[] = {
-                "Sumi-gaeshi",
-                "Tani-Otoshi",
-                "Hane-makikomi",
-                "Sukui-nage",
-                "Utsuri-goshi",
-                "O-guruma",
-                "Soto-makikomi",
-                "Uki-Otoshi"
+                "Sumi gaeshi",
+                "Tani Otoshi",
+                "Hane makikomi",
+                "Sukui nage",
+                "Utsuri goshi",
+                "O guruma",
+                "Soto makikomi",
+                "Uki Otoshi"
         };
         String gokyo[] = {
-                "Osoto-guruma",
-                "Uki-waza",
-                "Yoko-wakare",
-                "Yoko-guruma",
-                "Ushiro-goshi",
-                "Ura-nage",
-                "Sumi-Otoshi",
-                "Yoko-gake"
+                "Osoto guruma",
+                "Uki waza",
+                "Yoko wakare",
+                "Yoko guruma",
+                "Ushiro goshi",
+                "Ura nage",
+                "Sumi Otoshi",
+                "Yoko gake"
+        };
+
+        String others[] = {
+                "Seoi Otoshi",
+                "Morote Seoi Nage",
+                "Sode Tsuri Komi Goshi",
+                "Osoto Otoshi"
         };
 
         if (pressed.equals("Dai Ikkyo")) {
@@ -84,8 +91,10 @@ public class ContentGetter extends Application {
             return sankyo;
         } else if (pressed.equals("Dai Yonkyo")) {
             return yonkyo;
-        } else {
+        } else if (pressed.equals("Dai Gokyo")) {
             return gokyo;
+        } else {
+            return others;
         }
 
     }

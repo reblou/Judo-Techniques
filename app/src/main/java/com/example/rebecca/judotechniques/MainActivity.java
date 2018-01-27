@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.judotechniques.MESSAGE";
     ListView simpleList;
-    String throwCategories[] = {"Dai Ikkyo", "Dai Nikkyo", "Dai Sankyo", "Dai Yonkyo", "Dai Gokyo"};
+    String throwCategories[] = {"Dai Ikkyo", "Dai Nikkyo", "Dai Sankyo", "Dai Yonkyo", "Dai Gokyo", "Others"};
 
     @Override   protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
