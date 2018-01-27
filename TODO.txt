@@ -1,5 +1,0 @@
-- documentation
-- change thumbnails to links possible?
-- fix broken characters in titles
-- about page
-- bad example videos
