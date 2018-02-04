@@ -1,5 +1,4 @@
-- documentation
-- change thumbnails to links possible?
-- fix broken characters in titles
 - about page
+- clean up script files
+- fix broken characters in titles
 - bad example videos
