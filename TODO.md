@@ -1,4 +1,7 @@
-- about page
+- Theme / style improvements
+- about page (Lookup "Setting up the App bar tutorial)
 - clean up script files
 - fix broken characters in titles
-- bad example videos
+- Option to List throws in different categories (by throw type rather than gokyo)
+- Option to switch to bad example videos
+- Throw search (?)
